@@ -45,7 +45,7 @@ def call(body){
                         dowstream = build job: 'downstream-1',
                         parameters: [
                             string(name: 'JENKINS_LIB_BRANCH', value: JENKINS_LIB_BRANCH)
-                        ]
+                        ],
                         propagate: false
                         
                         downstream_job_info = Utils.getMainStreamJobInfo(dowstream, 'DOWNSTREAM')
