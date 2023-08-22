@@ -55,6 +55,7 @@ def call(body){
                     env.anotherEnv = "AFTER"
                     println("Failed stage: " + failedStages)
                 }
+                cleanWs()
             }
         }
     }

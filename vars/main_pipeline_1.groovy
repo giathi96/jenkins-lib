@@ -55,6 +55,8 @@ def call(body){
                             error("DOWNSREAM FAILED")
                         }
                     }
+
+                    cleanWs()
                 }
             }
         }
