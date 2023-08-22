@@ -6,20 +6,20 @@ import org.jenkinsci.plugins.workflow.job.WorkflowRun
 
 @NonCPS
 List<String> call() {
-    def visitor = new PipelineNodeGraphVisitor((WorkflowRun) currentBuild.rawBuild)
-    def failedStages = findFailedStages(visitor.getPipelineNodes())
+    def pipelineNodeGraphVisitor = new PipelineNodeGraphVisitor((WorkflowRun) currentBuild.rawBuild)
+    def failedStages = getfailstages(pipelineNodeGraphVisitor.getPipelineNodes())
 
     return failedStages.collect { it.displayName }
 }
 
 @NonCPS
-List<FlowNodeWrapper> findFailedStages(List<FlowNodeWrapper> nodes) {
+List<FlowNodeWrapper> getfailstages(List<FlowNodeWrapper> nodes) {
     return nodes.findAll {
-        boolean isFailed = it.status.result == BlueRun.BlueRunResult.FAILURE
-        boolean isRegularStage = it.type == FlowNodeWrapper.NodeType.STAGE
+        boolean isFail = it.status.result == BlueRun.BlueRunResult.FAILURE
+        boolean isReguStage = it.type == FlowNodeWrapper.NodeType.STAGE
 
-        boolean isBuiltParallelStage = it.type == FlowNodeWrapper.NodeType.PARALLEL && it.firstParent != null
+        boolean isParallelStage = it.type == FlowNodeWrapper.NodeType.PARALLEL && it.firstParent != null
 
-        return isFailed && (isRegularStage || isBuiltParallelStage)
+        return isFail && (isReguStage || isParallelStage)
     }
 }
