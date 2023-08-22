@@ -49,18 +49,12 @@ def call(body){
             always {
                 echo "-=- Post job -=-"
 
-                script {
-                    env.anotherEnv = "BEFORE"
-                    env.failedStages = "FAILED BEFORE"
+                script {               
+                    def failedStages = getFailedStages().join(", ")
+                    env.failedStages = failedStages
+                    env.anotherEnv = "AFTER"
+                    println("Failed stage: " + failedStages)
                 }
-                node ("agent_68") {
-                    script{                
-                        def failedStages = getFailedStages().join(", ")
-                        env.failedStages = failedStages
-                        env.anotherEnv = "AFTER"
-                        println("Failed stage: " + failedStages)
-                    }
-            }  
             }
         }
     }
