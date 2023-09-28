@@ -43,6 +43,7 @@ def call(body){
 
                                 println("TYPE ${result1.getClass().getName()}")
                                 println("TYPE ${result2.getClass().getName()}")
+                                println("TYPE ${sh(script: command, returnStdout: true).getClass().getName()}")
                                 println("RESULT1: " + result1)
                                 println("RESULT2: " + result2)
                             }
