@@ -38,6 +38,7 @@ def call(body){
                             echo "-=- Downstream Parallel stage 2 -=-"
                             script {
                                 def test = test_matcher()
+                                def test2 = test_ip()
                                 println(test)
                             }
                             
