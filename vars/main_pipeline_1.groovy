@@ -31,9 +31,9 @@ def call(body){
                     stage("Parallel stage 2") {
                         steps {
                             script {
-                                def command = 'perl -0777 -ne \'if (/<software-rev>(.*?)<\/software-rev>/s) { print "$1\n"; exit; }\''
+                                def command = ''
                                 sh """
-                                    echo  | ${command}
+                                    echo  | perl -0777 -ne \\\'if (/<software-rev>(.*?)<\\/software-rev>/s) { print "$1\\n"; exit; }\\\' 
                                 """
                             }
                         }
