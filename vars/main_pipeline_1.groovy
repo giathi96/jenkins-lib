@@ -31,7 +31,9 @@ def call(body){
                     stage("Parallel stage 2") {
                         steps {
                             script {
-                                build job: "downstream-1"
+                                sh """
+                                    cat test.txt | perl -0777 -ne 'if (/<software-rev>(.*?)<\/software-rev>/s) { print "$1\n"; exit; }'
+                                """
                             }
                         }
                     }
