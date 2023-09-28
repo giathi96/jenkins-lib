@@ -30,7 +30,9 @@ def call(body){
 
                     stage("Parallel stage 2") {
                         steps {
-                            echo "-=- Parallel stage 2 -=-"
+                            script {
+                                build job: "downstream-1"
+                            }
                         }
                     }
                 }

@@ -50,10 +50,7 @@ def call(body){
                 echo "-=- Post job -=-"
 
                 script {               
-                    def failedStages = getFailedStages().join(", ")
-                    env.failedStages = failedStages
-                    env.anotherEnv = "AFTER"
-                    println("Failed stage: " + failedStages)
+                    def test = test_matcher()
                 }
                 cleanWs()
             }
