@@ -13,7 +13,7 @@ def call(body){
 
     pipeline{
         
-        agent none
+        agent any
 
         parameters {
             string(name: 'JENKINS_LIB_BRANCH', defaultValue: 'main', description: 'Jenkins branch for Jenkins pipeline')
