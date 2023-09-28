@@ -33,7 +33,7 @@ def call(body){
                             script {
                                 def command = ''
                                 sh """
-                                    echo  | perl -0777 -ne \\\'if (/<software-rev>(.*?)<\\/software-rev>/s) { print "$1\\n"; exit; }\\\' 
+                                    echo  | perl -0777 -ne 'if (/<software-rev>(.*?)<\\/software-rev>/s) { print "\$1\\n"; exit; }' 
                                 """
                             }
                         }
