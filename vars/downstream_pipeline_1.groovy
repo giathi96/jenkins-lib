@@ -36,7 +36,10 @@ def call(body){
                     stage("Downstream Parallel stage 2") {
                         steps {
                             echo "-=- Downstream Parallel stage 2 -=-"
-                            def test = test_matcher()
+                            script {
+                                def test = test_matcher()
+                                println(test)
+                            }
                             
                         }
                     }
