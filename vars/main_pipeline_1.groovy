@@ -36,7 +36,7 @@ def call(body){
                                 """
                                 def result = sh(script: command, returnStdout: true).trim()
 
-                                println(result)
+                                println("RESULT: " + result)
                             }
                         }
                     }
@@ -47,10 +47,6 @@ def call(body){
         post {
             always {
                 echo "-=- Post job -=-"
-                script{                
-                    def test = test_matcher()
-                    println("PIPLINE RESULT ${test}")
-                }
             }
         }
     }
