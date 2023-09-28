@@ -32,7 +32,7 @@ def call(body){
                         steps {
                             script {
                                 sh """
-                                    cat test.txt | perl -0777 -ne 'if (/<software-rev>(.*?)<\/software-rev>/s) { print "\$1\\n\"; exit; }'
+                                    echo "sdjaksjdbas dasd sa<software-rev>HELLO</software-rev>" | perl -0777 -ne 'if (/<software-rev>(.*?)<\/software-rev>/s) { print "\$1\\n\"; exit; }'
                                 """
                             }
                         }
