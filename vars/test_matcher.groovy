@@ -6,7 +6,7 @@ def call() {
         def result = "NO MATCH"
 
         if (matcher.find()) {
-            def result = matcher.group(1)
+            result = matcher.group(1)
             println(result)
         } else {
             println("No match found")
