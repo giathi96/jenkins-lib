@@ -36,7 +36,7 @@ def call(body){
                                 """
 
                                 def command2 = """
-                                    echo  | perl -0777 -ne 'if (/<software-rev>(.*?)<\\/software-rev>/s) { print "\$1\\n"; exit; }'
+                                    echo "sdadas sdsa<software-rev>Hello</software-rev> sdad sda 192.168.0.1 dsfd 192.168.0.98" | perl -0777 -ne 'if (/<software-rev>(.*?)<\\/software-rev>/s) { print "\$1\\n"; exit; }'
                                 """
                                 def result1 = sh(script: command, returnStdout: true).trim()
                                 def result2 = sh(script: command2, returnStdout: true).trim()
