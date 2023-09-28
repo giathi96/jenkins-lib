@@ -6,8 +6,8 @@ def call() {
 
         if (matcher.find()) {
             def result = matcher.group(1)
-            return result
             println(result)
+            return result
         } else {
             println("No match found")
             return "KHONG CO"

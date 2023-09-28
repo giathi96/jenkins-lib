@@ -41,7 +41,8 @@ def call(body){
             always {
                 echo "-=- Post job -=-"
                 script{                
-                    test_matcher()
+                    def test = test_matcher()
+                    println("PIPLINE RESULT ${test}")
                 }
             }
         }
