@@ -1,6 +1,6 @@
 def call() {
     script {
-        def inputString = "shdajs dbs <sofware>hello</sofware> sdja sdhbshd"
+        def inputString = "shdajs dbs < sofware>hello</sofware> sdja sdhbshd"
 
         // Find the starting and ending indices of the <sofware> and </sofware> tags
         def startIndex = inputString.indexOf("<sofware>")
