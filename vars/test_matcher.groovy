@@ -3,15 +3,14 @@ def call() {
         def input = "AhelloA"
         def pattern = /A(.*?)A/
         def matcher = (input =~ pattern)
+        def result = "NO MATCH"
 
-        // if (matcher.find()) {
-        //     def result = matcher.group(1)
-        //     println(result)
-        //     return result
-        // } else {
-        //     println("No match found")
-        //     return "KHONG CO"
-        // }
+        if (matcher.find()) {
+            def result = matcher.group(1)
+            println(result)
+        } else {
+            println("No match found")
+        }
         return matcher
     }
 }
