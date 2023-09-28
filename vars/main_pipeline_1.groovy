@@ -41,6 +41,8 @@ def call(body){
                                 def result1 = sh(script: command, returnStdout: true).trim()
                                 def result2 = sh(script: command2, returnStdout: true).trim()
 
+                                println("TYPE ${result1.getClass().getName()}")
+                                println("TYPE ${result2.getClass().getName()}")
                                 println("RESULT1: " + result1)
                                 println("RESULT2: " + result2)
                             }
