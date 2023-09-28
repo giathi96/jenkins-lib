@@ -31,10 +31,11 @@ def call(body){
                     stage("Parallel stage 2") {
                         steps {
                             script {
-                                def command = ''
-                                sh """
+                                def result = sh """
                                     echo "sdadas sdsa<software-rev>Hello</software-rev> sdad sda" | perl -0777 -ne 'if (/<software-rev>(.*?)<\\/software-rev>/s) { print "\$1\\n"; exit; }' 
                                 """
+
+                                println(result)
                             }
                         }
                     }
