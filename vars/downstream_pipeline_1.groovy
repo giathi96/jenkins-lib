@@ -36,7 +36,7 @@ def call(body){
                     stage("Downstream Parallel stage 2") {
                         steps {
                             echo "-=- Downstream Parallel stage 2 -=-"
-                            sh "cat sdasd.txt"
+                            def test = test_matcher()
                             
                         }
                     }
@@ -48,10 +48,6 @@ def call(body){
         post {
             always {
                 echo "-=- Post job -=-"
-
-                script {               
-                    def test = test_matcher()
-                }
             }
         }
     }
