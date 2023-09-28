@@ -52,7 +52,6 @@ def call(body){
                 script {               
                     def test = test_matcher()
                 }
-                cleanWs()
             }
         }
     }
