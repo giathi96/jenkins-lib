@@ -43,7 +43,6 @@ def call(body){
         post {
             always {
                 script {
-                    def sumMap = [:]
                     def map1 = [
                         total: 10,
                         pass: 7,
@@ -57,10 +56,11 @@ def call(body){
                         failed: 0,
                         skip: 0
                     ]
-                    map2.each { key, value ->
-                        if (!sumMap.containsKey(key)) {
-                            sumMap[key] = value
-                        }
+
+                    def sumMap = [:]
+
+                    (map1.keySet() + map2.keySet()).each { key ->
+                        sumMap[key] = (map1[key] ?: 0) + (map2[key] ?: 0)
                     }
 
                     println(sumMap)
