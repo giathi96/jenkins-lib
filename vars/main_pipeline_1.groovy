@@ -46,7 +46,7 @@ def call(body){
                     def map1 = [
                         total: 10,
                         pass: 7,
-                        failed: "2",
+                        failed: 2,
                         skip: 1,
                     ]
 
@@ -62,7 +62,7 @@ def call(body){
                     (map1.keySet() + map2.keySet()).each { key ->
                         sumMap[key] = (map1[key] ?: 0) + (map2[key] ?: 0)
                     }
-
+                    println("NO FIELD: " + sumMap["NOTHIFNG"])
                     println(sumMap)
                 }
             }
