@@ -43,6 +43,7 @@ def call(body){
         post {
             always {
                 script {
+                    def sumMap = [:]
                     def map1 = [
                         total: 10,
                         pass: 7,
