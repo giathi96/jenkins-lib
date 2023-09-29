@@ -47,14 +47,16 @@ def call(body){
                         total: 10,
                         pass: 7,
                         failed: 2,
-                        skip: 1
+                        skip: 1,
+                        hello: "ds"
                     ]
 
                     def map2 = [
                         total: 13,
                         pass: 13,
                         failed: 0,
-                        skip: 0
+                        skip: 0,
+                        nothing: "sfsf"
                     ]
 
                     def sumMap = [:]
