@@ -37,6 +37,13 @@ def call(body){
                         }
                     }
                 }
+                post {
+                    always {
+                        script {
+                            println("POST OF PARALLEL")
+                        }
+                    }
+                }
             }
         }
 
